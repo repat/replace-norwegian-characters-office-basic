@@ -1,0 +1,51 @@
+Sub NO_WITHOUT_SPECIAL_CHARS()
+
+    dim oSheet as object, mySuche as Object
+    
+    'erste Tabelle
+    oSheet = thisComponent.Sheets.getByIndex(0)
+    mySuche=oSheet.createReplaceDescriptor()
+    
+    With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("å")
+    .setReplaceString("a")
+    end With
+    oSheet.replaceAll(mySuche)
+    
+     With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("Å")
+    .setReplaceString("A")
+    end With
+    oSheet.replaceAll(mySuche)
+    
+    With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("ø")
+    .setReplaceString("o")
+    end With
+    oSheet.replaceAll(mySuche)
+    
+    With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("Ø")
+    .setReplaceString("O")
+    end With
+    oSheet.replaceAll(mySuche)
+
+    With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("æ")
+    .setReplaceString("ae")
+    end With
+    oSheet.replaceAll(mySuche)
+    
+     With mySuche
+    .SearchRegularExpression = False
+    .setSearchString("Æ")
+    .setReplaceString("AE")
+    end With
+    oSheet.replaceAll(mySuche)
+    
+End Sub
